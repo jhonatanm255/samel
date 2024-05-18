@@ -1,6 +1,6 @@
 /* MODULOS CSS */
-@import "/css/header.css";
-@import "/css/main.css";
+@import "header.css";
+@import "main.css";
 
 /* REESTABLECIDO DE ESTILOS GENERALES */
 *{
