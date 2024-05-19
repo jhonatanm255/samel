@@ -1,0 +1,74 @@
+.abaut {
+    position: relative;
+    width: 80%;
+    margin: 100px auto 30px;
+    display: flex;
+    background-color: rgb(15, 15, 15);
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.img-size {
+    width: 350px;
+    height: 350px;
+}
+
+.description {
+    color: aliceblue;
+    margin-left: 30px;
+}
+
+.name-h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.abaut-parrafo {
+    font-style: italic;
+}
+
+.color-letra-abaut {
+    color: var(--color-orange);
+    font-size: 1.5em;
+}
+
+.right {
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+}
+
+/* INFO EXPERIENCIA */
+.info-experiencia {
+    width: 80%;
+    margin: 0 auto 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: solid 1px var(--color-orange);
+    padding: 40px;
+    border-radius: 5px;
+}
+
+.tiempo, .tattos, .desing {
+    color: rgb(255, 240, 240);
+    
+    
+}
+
+.tiempo, .tattos {
+    border-right: solid 1px var(--color-orange);
+}
+
+.big {
+    font-size: 3em;
+    margin: auto;
+    color: #ff3300;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
