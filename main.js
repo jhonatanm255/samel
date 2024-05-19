@@ -1,4 +1,5 @@
 
+// FUNCION PARA LA ANIMACION DE LOS VALORES DE LA SECCION DE EXPERIENCIA
 document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -16,5 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(item);
     });
 });
+
+
 
 

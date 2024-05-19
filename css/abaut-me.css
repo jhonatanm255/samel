@@ -1,11 +1,14 @@
+
+/* SECCION DE ABAUT PAGINA PRINCIPAL */
 .abaut {
     position: relative;
     width: 80%;
     margin: 40px auto 30px;
     display: flex;
-    background-color: rgb(31, 31, 31);
+    background-color: var(--color-dark-primary);
     padding: 30px;
     border-radius: 5px;
+    box-shadow: var(--box-shadow);
 }
 
 .img-size {
@@ -39,7 +42,7 @@
     bottom: 25px;
 }
 
-/* INFO EXPERIENCIA */
+/* SECCION DE INFO EXPERIENCIA */
 .info-experiencia {
     width: 80%;
     margin: 0 auto 100px;
@@ -48,6 +51,7 @@
     border: solid 1px var(--color-orange);
     padding: 40px;
     border-radius: 5px;
+    box-shadow: var(--box-shadow);
 }
 
 .tiempo, .tattos, .desing {
@@ -86,3 +90,77 @@
     transform: translateY(0);
 }
 
+/* SECCION DE MIS SERVICIOS */
+.sub-title {
+    color: aliceblue;
+    display: block;
+   text-align: center;
+}
+
+.sub-title h2 {
+    font-size: 2em;
+    font-weight: 200;
+}
+
+.sub-title h4 {
+    font-weight: 200;
+    font-style: italic;
+}
+
+.servicios-content {
+    margin: 60px auto;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.desing-service {
+    position: relative;
+    /* background-color: rgb(31, 31, 31); */
+    border: solid 1px var(--color-orange);
+    border-radius: 5px;
+    transition: all .2s;
+    box-shadow: var(--box-shadow);
+}
+
+.desing-service:hover {
+    background-color: var(--color-orange);
+    color: black;
+    cursor: pointer;
+}
+
+.desing-service:hover p {
+    color: black;
+    font-weight: 300;
+}
+
+.desing-service h3 {
+    background-color: var(--color-orange);
+    padding: 2px 45px;
+    border-radius: 20px;
+    color: black;
+    font-weight: 400;
+    position: absolute;
+    top: -15px;
+    left: 27.5%;
+}
+
+.desing-service p {
+    text-align: center;
+    margin: 40px 10px;
+    color: aliceblue;
+    font-weight: 200;
+}
+
+.desing-service .logo {
+    position: absolute;
+    left: 42.5%;
+    bottom: -30px;
+}
+
+.bg {
+    background-color: black;
+    border-radius: 50%;
+    padding: 5px;
+}

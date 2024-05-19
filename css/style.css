@@ -1,8 +1,9 @@
-/* MODULOS CSS */
+/* CSS MODULES */
 @import "header.css";
 @import "abaut-me.css";
+@import "galeria.css";
 
-/* REESTABLECIDO DE ESTILOS GENERALES */
+/* RESTORED GENERAL STYLES */
 *{
     margin: 0;
     padding: 0;
@@ -11,25 +12,33 @@
 
 body{
     font-family: "Poppins", sans-serif;
-    background-color: black;
+    background-color: var(--color-dark-secondary);
 }
 
 
-/* PALETA DE COLORES */
+/* COLOR PALETTE */
 :root {
+    --color-dark-primary : rgb(0, 0, 0);
+    --color-dark-secondary: rgb(17, 17, 17);
     --color-orange: rgb(255, 202, 88);
+    --box-shadow: 0 0 16px black;
 }
 
-/* ESTILO DE BOTON */
+/* BUTTON STYLE */
 .btn {
     padding: 7px 35px;
     border: none;
     background-color: var(--color-orange);
-    color: black;
+    color: black    ;
     border-radius: 3px;
     cursor: pointer;
     font-size: 1em; 
     text-decoration: none;
+    transition: all .2s ease;
+}
+
+.btn:hover {
+    box-shadow: 0 0 24px var(--color-orange);
 }
 
 
