@@ -1,9 +1,9 @@
 .abaut {
     position: relative;
     width: 80%;
-    margin: 100px auto 30px;
+    margin: 40px auto 30px;
     display: flex;
-    background-color: rgb(15, 15, 15);
+    background-color: rgb(31, 31, 31);
     padding: 30px;
     border-radius: 5px;
 }
@@ -52,8 +52,6 @@
 
 .tiempo, .tattos, .desing {
     color: rgb(255, 240, 240);
-    
-    
 }
 
 .tiempo, .tattos {
@@ -62,13 +60,29 @@
 
 .big {
     font-size: 3em;
+    font-weight: 700;
     margin: auto;
-    color: #ff3300;
+    color: var(--color-orange);
 }
 
 .center {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.weight {
+    font-weight: 300;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
