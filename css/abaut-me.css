@@ -6,7 +6,6 @@
     margin: 40px auto 30px;
     display: flex;
     background-color: var(--color-dark-primary);
-    padding: 30px;
     border-radius: 5px;
     box-shadow: var(--box-shadow);
 }
@@ -14,10 +13,11 @@
 .img-size {
     width: 350px;
     height: 350px;
+    border-radius: 5px 0 0 5px;
 }
 
 .description {
-    color: aliceblue;
+    color: var(--heading-clr);
     margin-left: 30px;
 }
 
@@ -29,6 +29,7 @@
 
 .abaut-parrafo {
     font-style: italic;
+    font-weight: 200;
 }
 
 .color-letra-abaut {
@@ -45,17 +46,17 @@
 /* SECCION DE INFO EXPERIENCIA */
 .info-experiencia {
     width: 80%;
-    margin: 0 auto 100px;
+    margin: 40PX auto 60px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    border: solid 1px var(--color-orange);
     padding: 40px;
     border-radius: 5px;
     box-shadow: var(--box-shadow);
+    background-color: var(--color-dark-primary);
 }
 
 .tiempo, .tattos, .desing {
-    color: rgb(255, 240, 240);
+    color: var(--heading-clr);
 }
 
 .tiempo, .tattos {
@@ -149,14 +150,15 @@
 .desing-service p {
     text-align: center;
     margin: 40px 10px;
-    color: aliceblue;
-    font-weight: 200;
+    color: var(--heading-clr);
+    font-weight: 300;
 }
 
 .desing-service .logo {
     position: absolute;
     left: 42.5%;
     bottom: -30px;
+    border: solid 2px var(--color-orange);
 }
 
 .bg {

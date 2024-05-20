@@ -2,6 +2,8 @@
 @import "header.css";
 @import "abaut-me.css";
 @import "galeria.css";
+@import "reviews.css";
+@import "testimonials.css";
 
 /* RESTORED GENERAL STYLES */
 *{
@@ -19,9 +21,14 @@ body{
 /* COLOR PALETTE */
 :root {
     --color-dark-primary : rgb(0, 0, 0);
-    --color-dark-secondary: rgb(17, 17, 17);
+    --color-dark-secondary: rgb(21, 21, 21);
+    --color-grey: rgb(139, 139, 139);
     --color-orange: rgb(255, 202, 88);
     --box-shadow: 0 0 16px black;
+	--card-clr: #161922;
+	--body-clr: #191d28;
+    --heading-clr: #dadada;
+	--text-clr: #767a86;
 }
 
 /* BUTTON STYLE */
