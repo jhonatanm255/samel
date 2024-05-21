@@ -23,10 +23,16 @@ document.addEventListener("DOMContentLoaded", function() {
     const dbRef = firebase.database().ref('testimonials');
 
     // Observador para verificar si hay testimonios al cargar la página
-    dbRef.once('value', function(snapshot) {
-        if (!snapshot.exists()) {
-            alert('No existen comentarios en esta sección');
-        }
+    dbRef.on('value', function(snapshot) {
+        dbRef.once('value', function(snapshot) {
+            const noComent = document.querySelector('.no-comentarios'); // Corrección aquí
+            if (!snapshot.exists()) {
+                noComent.style.display = 'block';
+            } else {
+                noComent.style.display = 'none';
+            }
+        });
+        
     });
 
     // Función para agregar un testimonio
