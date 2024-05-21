@@ -19,8 +19,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
     <!-- *******  Owl Carousel Links  ******* -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
-    <!-- OWL CAROUSEL LIBRAR -->
+    <!-- OWL CAROUSEL LIBRARY -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+    <!-- SWEETALERT LIBRARY -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>Samel Castillo</title>
 </head>
 <body>
@@ -111,9 +113,25 @@
     <div class="gallery-content"></div>
 
     <!-- WHAT MY CLIENTS SAY -->
-    <div class="sub-title">
+    <div class="sub-title relative">
         <h2>¿QUE DICEN MIS CLIENTES?</h2>
+        <button id="modal" class="btn add">Agrega un comentario</button>
+        <div class="form-testimonial">
+            <h3>Déjame un comentario</h3>
+            <div class="form-img">
+                <div class="form">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" placeholder="Escribe tu nombre" required>
+        
+                    <label for="msj">Mensaje</label>
+                    <textarea rows="10" cols="70" name="msj" id="msj" placeholder="Escribe tu mensaje" required></textarea>
+        
+                    <button type="submit" id="send">Enviar</button>
+                </div>
+            </div>
+        </div>
    </div>
+   
 
     <div class="testimonials-section">
         <!-- Owl Carousel Slider Starts -->
@@ -123,9 +141,9 @@
                 <main class="test-card-body">
                     <div class="quote">
                         <i class="fa fa-quote-left"></i>
-                        <h2>Jonh Doe</h2>
+                        <h2></h2>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
+                    <p></p>
                     <div class="ratings">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -136,170 +154,40 @@
                 </main>
             </div>
             <!-- Item1 Ends -->
-
-            <!-- Item2 Starts -->
-            <div class="testimonial-card">
-                <main class="test-card-body">
-                    <div class="quote">
-                        <i class="fa fa-quote-left"></i>
-                        <h2>Alisa Fredman</h2>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
-                    <div class="ratings">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                </main>
-            </div>
-            <!-- Item2 Ends -->
-
-            <!-- Item3 Starts -->
-            <div class="testimonial-card">
-                <main class="test-card-body">
-                    <div class="quote">
-                        <i class="fa fa-quote-left"></i>
-                        <h2>Steve Garner</h2>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
-                    <div class="ratings">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                </main>
-            </div>
-            <!-- Item3 Ends -->
-
-            <!-- Item4 Starts -->
-            <div class="testimonial-card">
-                <main class="test-card-body">
-                    <div class="quote">
-                        <i class="fa fa-quote-left"></i>
-                        <h2>Constanza Liyo</h2>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
-                    <div class="ratings">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                </main>
-            </div>
-            <!-- Item4 Ends -->
-
-            <!-- Item5 Starts -->
-            <div class="testimonial-card">
-                <main class="test-card-body">
-                    <div class="quote">
-                        <i class="fa fa-quote-left"></i>
-                        <h2>Alfredo Bustos</h2>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
-                    <div class="ratings">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                </main>
-            </div>
-            <!-- Item5 Ends -->
-
-            <!-- Item6 Starts -->
-            <div class="testimonial-card">
-                <main class="test-card-body">
-                    <div class="quote">
-                        <i class="fa fa-quote-left"></i>
-                        <h2>Leonardo Khiara</h2>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
-                    <div class="ratings">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                </main>
-            </div>
-            <!-- Item6 Ends -->
-
-             <!-- Item7 Starts -->
-             <div class="testimonial-card">
-                <main class="test-card-body">
-                    <div class="quote">
-                        <i class="fa fa-quote-left"></i>
-                        <h2>Jhonatan Muñoz</h2>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
-                    <div class="ratings">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                </main>
-            </div>
-            <!-- Item7 Ends -->
-
-            <!-- Item8 Starts -->
-            <div class="testimonial-card">
-                <main class="test-card-body">
-                    <div class="quote">
-                        <i class="fa fa-quote-left"></i>
-                        <h2>Diana Rondon</h2>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
-                    <div class="ratings">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                </main>
-            </div>
-            <!-- Item8 Ends -->
-
-            <!-- Item9 Starts -->
-            <div class="testimonial-card">
-                <main class="test-card-body">
-                    <div class="quote">
-                        <i class="fa fa-quote-left"></i>
-                        <h2>Isabella Muñoz</h2>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
-                    <div class="ratings">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                </main>
-            </div>
-            <!-- Item9 Ends -->
         </div>
         <!-- Owl Carousel Slider Ends -->
 
     </div>
 
-  
+    <!-- Firebase App -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+       
+            const firebaseConfig = {
+            apiKey: "AIzaSyCzmZ1KpfaSBNjRhnbBkRk7spt_UDkdCHc",
+            authDomain: "samel-website.firebaseapp.com",
+            databaseURL: "https://samel-website-default-rtdb.firebaseio.com/",
+            projectId: "samel-website",
+            storageBucket: "samel-website.appspot.com",
+            messagingSenderId: "227424756635",
+            appId: "1:227424756635:web:710d5fa7a550000241f73e",
+            measurementId: "G-QT0PC3E2BG"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+    </script>
 
     <!--   *****   JQuery Link   *****   -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <!--   *****   Owl Carousel js Link  *****  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <!-- SCRIP MAIN -->
+    <script src="firebaseConfig.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

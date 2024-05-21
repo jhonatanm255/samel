@@ -98,6 +98,12 @@
    text-align: center;
 }
 
+.relative {
+    position: relative;
+    display: block;
+    text-align: center;
+}
+
 .sub-title h2 {
     font-size: 2em;
     font-weight: 200;

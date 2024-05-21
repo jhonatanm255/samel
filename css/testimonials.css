@@ -1,8 +1,13 @@
 
+.add {
+	display: inline-block;
+	margin: 10px auto;
+}
+
 .testimonials-section{
 	width: 100%;
 	padding: 0px 8%;
-	margin-top: 20px;
+	margin: 20px 0;
 }
 
 .testimonials-container{
@@ -18,6 +23,13 @@
 	box-shadow: var(--box-shadow);
 	padding: 20px;
 	border-radius: 5px;
+}
+
+.test-card-body {
+	height: 270px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .test-card-body .quote{
@@ -127,4 +139,69 @@
 
 .owl-dot.active span{
 	background-color: var(--color-orange) !important;
+}
+
+/* MODAL PARA AGREGAR UN COMENTARIO */
+.form-testimonial {
+	display: none;
+	position: absolute;
+	top: 0%;
+	left: 27.5%;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+	z-index: 300;
+}
+
+.form-testimonial h3 {
+    margin-bottom: 20px;
+    text-align: center;
+	color: black;
+}
+
+.form-img {
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    width: 100%;
+}
+
+.form label {
+    display: block;
+	text-align: left;
+	color: black;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form input,
+.form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form button:hover {
+    background-color: #0056b3;
 }
