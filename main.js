@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
             name: name,
             message: message,
             timestamp: firebase.database.ServerValue.TIMESTAMP
+            
         });
     }
 
@@ -82,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             snapshot.forEach((childSnapshot) => {
                 const childData = childSnapshot.val();
+                const date = new Date(childData.timestamp).toLocaleString();
                 const testimonialCard = `
                     <div class="testimonial-card">
                         <main class="test-card-body">
@@ -91,11 +93,14 @@ document.addEventListener("DOMContentLoaded", function() {
                             </div>
                             <p>${childData.message}</p>
                             <div class="ratings">
+                                <div class="date">${date}</div>
+                                <div class"star">
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
+                                </div>
                             </div>
                         </main>
                     </div>

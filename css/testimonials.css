@@ -51,7 +51,7 @@
 	margin: 10px 0px 15px;
 	font-size: 14px;
 	line-height: 1.5;
-	color: var(--text-clr);
+	color: var(--heading-clr);
 }
 
 .test-card-body .ratings{
@@ -62,6 +62,17 @@
 	font-size: 17px;
 	color: var(--color-orange);
 	cursor: pointer;
+}
+
+.ratings {
+	display: flex;
+	justify-content: space-between;
+}
+
+.date {
+	color: var(--text-clr);
+	font-style: italic;
+	font-size: 0.8rem;
 }
 
 .testimonial-card .profile{
