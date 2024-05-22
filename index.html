@@ -126,23 +126,24 @@
         
                     <label for="msj">Mensaje</label>
                     <textarea rows="7" cols="70" name="msj" id="msj" placeholder="Escribe tu mensaje" required></textarea>
-
+        
                     <div class="rating">
-                        <input type="radio" name="star" value="5" id="star5"><label for="star5">★</label>
-                        <input type="radio" name="star" value="4" id="star4"><label for="star4">★</label>
-                        <input type="radio" name="star" value="3" id="star3"><label for="star3">★</label>
-                        <input type="radio" name="star" value="2" id="star2"><label for="star2">★</label>
-                        <input type="radio" name="star" value="1" id="star1"><label for="star1">★</label>
+                        <i class="fa fa-star" data-value="1"></i>
+                        <i class="fa fa-star" data-value="2"></i>
+                        <i class="fa fa-star" data-value="3"></i>
+                        <i class="fa fa-star" data-value="4"></i>
+                        <i class="fa fa-star" data-value="5"></i>
                     </div>
-                    
+                    <input type="hidden" id="rating" name="rating" value="">
+        
                     <button type="submit" id="send">Enviar</button>
                 </div>
             </div>
         </div>
-        <div id="no-coment" class="no-comentarios">
-            <h3>No hay comentarios para mostrar</h3>
+        <div class="no-comentarios">
+            <h3>No hay comentarios</h3>
         </div>
-   </div>
+        
    
 
     <div class="testimonials-section">
@@ -195,6 +196,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <!-- SCRIP MAIN -->
     <script src="firebaseConfig.js"></script>
+    <script src="stars.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

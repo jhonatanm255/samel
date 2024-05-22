@@ -17,20 +17,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Función para agregar los comentarios
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function() {
     const dbRef = firebase.database().ref('testimonials');
 
     // Observador para verificar si hay testimonios al cargar la página
     dbRef.on('value', function(snapshot) {
-        dbRef.once('value', function(snapshot) {
-            const noComent = document.querySelector('.no-comentarios');
-            if (!snapshot.exists()) {
-                noComent.style.display = 'block';
-            } else {
-                noComent.style.display = 'none';
-            }
-        });
+        const noComent = document.querySelector('.no-comentarios');
+        if (!snapshot.exists()) {
+            noComent.style.display = 'block';
+        } else {
+            noComent.style.display = 'none';
+        }
     });
 
     // Función para agregar un testimonio
@@ -46,37 +43,56 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Función para abrir la ventana modal del formulario de comentarios
     const btnModal = document.getElementById('modal');
-    btnModal.addEventListener('click', () => {
-        const modalWindow = document.querySelector('.form-testimonial');
-        modalWindow.style.display = 'block';
-    });
+    if (btnModal) {
+        btnModal.addEventListener('click', () => {
+            const modalWindow = document.querySelector('.form-testimonial');
+            modalWindow.style.display = 'block';
+        });
+    }
 
     const btnClosed = document.getElementById('closed');
-        btnClosed.addEventListener('click', () => {
-            const modalWindow = document.querySelector('.form-testimonial');
-            modalWindow.style.display = 'none';
+    btnClosed.addEventListener('click', () => {
+        const modalWindow = document.querySelector('.form-testimonial');
+        modalWindow.style.display = 'none';
+    });
+
+    // Manejar la selección de estrellas
+    const stars = document.querySelectorAll('.rating .fa-star');
+    stars.forEach(star => {
+        star.addEventListener('click', function() {
+            const value = this.getAttribute('data-value');
+            document.getElementById('rating').value = value; // Actualiza el campo oculto
+            stars.forEach(s => s.classList.remove('selected'));
+            for (let i = 0; i < value; i++) {
+                stars[i].classList.add('selected');
+            }
         });
+    });
 
     // Manejar el envío del formulario
     document.getElementById('send').addEventListener('click', function(e) {
         e.preventDefault();
-        const name = document.getElementById('name').value;
-        const message = document.getElementById('msj').value;
-        const rating = document.querySelector('input[name="star"]:checked');
+        const name = document.getElementById('name').value.trim();
+        const message = document.getElementById('msj').value.trim();
+        const rating = document.getElementById('rating').value.trim();
+
+        console.log(`Name: ${name}, Message: ${message}, Rating: ${rating}`);
 
         if (name && message && rating) {
-            addTestimonial(name, message, rating.value);
+            addTestimonial(name, message, rating);
             document.getElementById('name').value = '';
             document.getElementById('msj').value = '';
-            rating.checked = false;
+            document.getElementById('rating').value = '';
+            stars.forEach(star => star.classList.remove('selected'));
             swal("Enviado", "", "success");
+            const modalWindow = document.querySelector('.form-testimonial');
+                modalWindow.style.display = 'none';
         } else {
             swal("Por favor, complete los campos", "", "error").then(() => {
+                const modalWindow = document.querySelector('.form-testimonial');
                 modalWindow.style.display = 'block';
             });
-        };
-        const modalWindow = document.querySelector('.form-testimonial');
-        modalWindow.style.display = 'none';
+        }
     });
 
     // Función para cargar testimonios y configurar el carrusel
@@ -93,8 +109,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 // Crear estrellas según la calificación
                 let stars = '';
-                for (let i = 0; i <= 5; i++) {
-                stars += `<i class="fa${i <= rating ? ' fa-solid fa-star' : ' fa-regular fa-star'}"></i>`;
+                for (let i = 1; i <= 5; i++) {
+                    stars += `<i class="fa${i <= rating ? ' fas' : ' far'} fa-star"></i>`;
                 }
 
                 const testimonialCard = `
@@ -106,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             </div>
                             <p>${childData.message}</p>
                             <div class="ratings">
-                            <div class='stars'${stars}</div>
+                                <div class='stars'>${stars}</div>
                                 <div class="date">${date}</div>
                             </div>
                         </main>
@@ -144,10 +160,4 @@ document.addEventListener("DOMContentLoaded", function() {
     // Cargar testimonios al iniciar la página
     loadTestimonials();
 });
-
-
-
-
-
-
 

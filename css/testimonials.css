@@ -163,15 +163,17 @@
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #3d3d3d;
     border-radius: 10px;
-    background-color: #f9f9f9;
+    background-color: var(--color-dark-primary);
 	z-index: 300;
 	box-shadow: var(--box-shadow);
 }
 
 #closed {
 	font-size: 16px;
+	background-color: #ce0000;
+	color: aliceblue;
 	border: none;
 	display: block;
 	margin-left: auto;
@@ -191,7 +193,7 @@
 .form-testimonial h3 {
     margin-bottom: 20px;
     text-align: center;
-	color: black;
+	color: var(--heading-clr);
 }
 
 .form {
@@ -201,7 +203,7 @@
 .form label {
     display: block;
 	text-align: left;
-	color: black;
+	color: var(--heading-clr);
     margin-bottom: 5px;
     font-weight: bold;
 }
@@ -211,9 +213,12 @@
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: none;
+	background-color: var(--color-dark-secondary);
     border-radius: 5px;
     font-size: 16px;
+	color: var(--heading-clr);
+	outline: none;
 }
 
 .rating {
@@ -224,8 +229,8 @@
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
-    color: #fff;
+    background-color: var(--color-orange);
+    color: black;
     border: none;
     border-radius: 5px;
     font-size: 16px;
@@ -233,11 +238,22 @@
 }
 
 .form button:hover {
-    background-color: #0056b3;
+    box-shadow: var(--box-shadow);
 }
 
 .no-comentarios h3 {
 	font-size: 1.3em;
 	font-weight: 300;
 	margin-top: 40px;
+}
+
+/* ESTILOS DE LAS ESTRELLAS DEL FORMULARIO */
+.rating .fa-star {
+	margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #8c8c8c;
+    cursor: pointer;
+}
+.rating .fa-star.selected {
+    color: var(--color-orange);
 }
