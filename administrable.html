@@ -23,99 +23,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
     <!-- SWEETALERT LIBRARY -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <title>Samel Castillo</title>
+    <title>admin</title>
 </head>
 <body>
-    <!-- HEADER -->
-    <header class="head">
-        <div class="nav">
-            <div class="logo"><img src="media/logo.png" alt="logotipo"></div>
-            <div class="nav-items">
-                <ul>
-                    <a class="item" href="#">Inicio</a>
-                    <a class="item" href="#">Sobre Mi</a>
-                    <a class="item" href="#">Galeria</a>
-                    <a class="item" href="#">Artes</a>
-                    <a class="item" href="#">Contacto</a>
-                    <a class="item agenda" href="#">Agenda</a>
-                </ul>
-            </div>
-        </div>
-        <div class="video-banner">
-            <video autoplay muted loop id="bg-video">
-                <source src="media/banner.mp4" type="video/mp4">
-            </video>
-            <div class="title">
-                <h1 class="name">Samel Castillo</h1>
-                <h4 class="slogan">Desing & Tattoo</h4>
-            </div>
-            <div class="overlay"></div>
-        </div>
-    </header>
 
-    <!-- ABAUT ME -->
-    <div class="abaut">
-        <img class="img-size" src="media/samel-4.jpg" alt="samel-img">
-        <div class="description">
-            <h2 class="name-h2">SOBRE MI</h2>
-            <p class="abaut-parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio odit architecto excepturi commodi, minus ex mollitia ratione exercitationem voluptas aut impedit culpa deserunt aperiam, ad esse iure natus dolor velit veritatis odio nisi aliquid? Alias eaque, unde possimus distinctio rem deserunt atque nostrum veritatis quam vero.</p><br>
-            <p class="abaut-parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus dolore accusamus cupiditate, similique sunt expedita nobis iste voluptas aperiam explicabo dolorem cumque porro deleniti reprehenderit eaque excepturi asperiores harum quasi.</p><br><br>
-            <a class="btn right" href="#">Mas</a>
-        </div>
-    </div>
-
-    <!-- EXPERIENCE INFO -->
-    <div class="info-experiencia">
-        <div class="tiempo">
-            <h3 class="center weight">AÑOS DE EXPERIENCIA</h3>
-            <p class="big center hidden" id="experiencia">10+</p>
-        </div>
-        <div class="tattos">
-            <h3 class="center weight">TATUAJES</h3>
-            <p class="big center hidden" id="tatuajes">13 mil+</p>
-        </div>
-        <div class="desing">
-            <h3 class="center weight">DISEÑOS</h3>
-            <p class="big center hidden" id="disenos">8 mil+</p>
-        </div>
-    </div>
-
-    <!-- MY SERVICES -->
-    <div class="sub-title">
-         <h2>MIS SERVICIOS</h2>
-        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, ullam?</h4>
-    </div>
-
-    <div class="servicios-content">
-        <div class="desing-service">
-            <h3>Diseños</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum rem dolor expedita dignissimos. Esse, vero minima maiores blanditiis tempora nulla.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, quod!</p>
-            <div class="logo bg"><img src="media/logo.png" alt=""></div>
-        </div>
-
-        <div class="desing-service">
-            <h3>Tatuajes</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum rem dolor expedita dignissimos. Esse, vero minima maiores blanditiis tempora nulla.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, quod!</p>
-            <div class="logo bg"><img src="media/logo.png" alt=""></div>
-        </div>
-
-        <div class="desing-service">
-            <h3>Asesorias</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum rem dolor expedita dignissimos. Esse, vero minima maiores blanditiis tempora nulla.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, quod!</p>
-            <div class="logo bg"><img src="media/logo.png" alt=""></div>
-        </div>  
-    </div>
-
-    <!-- GALLERY SECTION-->
-    <div class="sub-title">
-        <h2>MIS TRABAJOS</h2>
-   </div>
-    <div class="gallery-content"></div>
 
     <!-- WHAT MY CLIENTS SAY -->
     <div class="sub-title relative">
-        <h2>¿QUE DICEN MIS CLIENTES?</h2>
-        <button id="modal" class="btn add">Agrega un comentario</button>
+        <h2>SECCION DE COMENTARIOS</h2>
+        <!-- <button id="modal" class="btn add">Agrega un comentario</button> -->
         <div class="form-testimonial">
             <button id="closed">X</button>
             <h3>Déjame un comentario</h3>
@@ -153,6 +69,7 @@
                     <div class="quote">
                         <i class="fa fa-quote-left"></i>
                         <h2></h2>
+                        <button id="btn-delete">X</button>
                     </div>
                     <p></p>
                     <div class="ratings">
@@ -196,5 +113,6 @@
     <script src="firebaseConfig.js"></script>
     <script src="stars.js"></script>
     <script src="main.js"></script>
+    <script src="admin.js"></script>
 </body>
 </html>
