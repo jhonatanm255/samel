@@ -73,6 +73,7 @@
 	color: var(--text-clr);
 	font-style: italic;
 	font-size: 0.8rem;
+
 }
 
 .testimonial-card .profile{
@@ -155,28 +156,42 @@
 /* MODAL PARA AGREGAR UN COMENTARIO */
 .form-testimonial {
 	display: none;
-	position: absolute;
-	top: 0%;
-	left: 27.5%;
-    width: 100%;
-    max-width: 600px;
+	position: fixed;
+	top: 20%;
+	left: 37%;
+    width: 80%;
+    max-width: 400px;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 10px;
     background-color: #f9f9f9;
 	z-index: 300;
+	box-shadow: var(--box-shadow);
+}
+
+#closed {
+	font-size: 16px;
+	border: none;
+	display: block;
+	margin-left: auto;
+	padding: 3px 5px;
+	transition: all .2s;
+	font-weight: 500;
+}
+
+#closed:hover {
+	background-color: #ff0000;
+	padding: 3px 5px;
+	border: none;
+	border-radius: 2px;
+	color: aliceblue;
 }
 
 .form-testimonial h3 {
     margin-bottom: 20px;
     text-align: center;
 	color: black;
-}
-
-.form-img {
-    display: flex;
-    justify-content: center;
 }
 
 .form {
@@ -199,6 +214,10 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+}
+
+.rating {
+	display: flex;
 }
 
 .form button {

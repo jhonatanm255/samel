@@ -1,5 +1,4 @@
-
-// FUNCION PARA LA ANIMACION DE LOS VALORES DE LA SECCION DE EXPERIENCIA
+// Función para la animación de los valores de la sección de experiencia
 document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -18,60 +17,66 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// FUNCION PARA AGREGAR LOS COMENTARIOS
+// Función para agregar los comentarios
 document.addEventListener("DOMContentLoaded", function() {
     const dbRef = firebase.database().ref('testimonials');
 
     // Observador para verificar si hay testimonios al cargar la página
     dbRef.on('value', function(snapshot) {
         dbRef.once('value', function(snapshot) {
-            const noComent = document.querySelector('.no-comentarios'); // Corrección aquí
+            const noComent = document.querySelector('.no-comentarios');
             if (!snapshot.exists()) {
                 noComent.style.display = 'block';
             } else {
                 noComent.style.display = 'none';
             }
         });
-        
     });
 
     // Función para agregar un testimonio
-    function addTestimonial(name, message) {
+    function addTestimonial(name, message, rating) {
         const newTestimonialRef = dbRef.push();
         newTestimonialRef.set({
             name: name,
             message: message,
+            rating: parseInt(rating),
             timestamp: firebase.database.ServerValue.TIMESTAMP
-            
         });
     }
 
-    // FUNCION PARA ABRIR LA VENTANA MODAL DEL FORMULARIO DE COMENTARIOS
+    // Función para abrir la ventana modal del formulario de comentarios
     const btnModal = document.getElementById('modal');
     btnModal.addEventListener('click', () => {
         const modalWindow = document.querySelector('.form-testimonial');
-        modalWindow.style.display = 'block'
-    })
+        modalWindow.style.display = 'block';
+    });
+
+    const btnClosed = document.getElementById('closed');
+        btnClosed.addEventListener('click', () => {
+            const modalWindow = document.querySelector('.form-testimonial');
+            modalWindow.style.display = 'none';
+        });
 
     // Manejar el envío del formulario
-    document.getElementById('send').addEventListener('click', function() {
+    document.getElementById('send').addEventListener('click', function(e) {
+        e.preventDefault();
         const name = document.getElementById('name').value;
         const message = document.getElementById('msj').value;
+        const rating = document.querySelector('input[name="star"]:checked');
 
-        if (name && message) {
-            addTestimonial(name, message);
+        if (name && message && rating) {
+            addTestimonial(name, message, rating.value);
             document.getElementById('name').value = '';
             document.getElementById('msj').value = '';
+            rating.checked = false;
             swal("Enviado", "", "success");
-            
         } else {
             swal("Por favor, complete los campos", "", "error").then(() => {
                 modalWindow.style.display = 'block';
             });
         };
-
         const modalWindow = document.querySelector('.form-testimonial');
-        modalWindow.style.display = 'none'
+        modalWindow.style.display = 'none';
     });
 
     // Función para cargar testimonios y configurar el carrusel
@@ -84,6 +89,14 @@ document.addEventListener("DOMContentLoaded", function() {
             snapshot.forEach((childSnapshot) => {
                 const childData = childSnapshot.val();
                 const date = new Date(childData.timestamp).toLocaleString();
+                const rating = childData.rating;
+
+                // Crear estrellas según la calificación
+                let stars = '';
+                for (let i = 0; i <= 5; i++) {
+                stars += `<i class="fa${i <= rating ? ' fa-solid fa-star' : ' fa-regular fa-star'}"></i>`;
+                }
+
                 const testimonialCard = `
                     <div class="testimonial-card">
                         <main class="test-card-body">
@@ -93,14 +106,8 @@ document.addEventListener("DOMContentLoaded", function() {
                             </div>
                             <p>${childData.message}</p>
                             <div class="ratings">
+                            <div class='stars'${stars}</div>
                                 <div class="date">${date}</div>
-                                <div class"star">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                </div>
                             </div>
                         </main>
                     </div>
@@ -110,25 +117,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Inicializar el carrusel después de cargar los testimonios
             testimonialsContainer.owlCarousel({
-                loop:true,
-                autoplay:true,
-                autoplayTimeout:6000,
-                margin:10,
-                nav:true,
-                navText:["<i class='fa-solid fa-arrow-left'></i>",
-                         "<i class='fa-solid fa-arrow-right'></i>"],
-                responsive:{
-                    0:{
-                        items:1,
-                        nav:true
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 6000,
+                margin: 10,
+                nav: true,
+                navText: ["<i class='fa-solid fa-arrow-left'></i>", "<i class='fa-solid fa-arrow-right'></i>"],
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: true
                     },
-                    600:{
-                        items:2,
-                        nav:true
+                    600: {
+                        items: 2,
+                        nav: true
                     },
-                    768:{
-                        items:3,
-                        nav:true
+                    768: {
+                        items: 3,
+                        nav: true
                     },
                 }
             });

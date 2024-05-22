@@ -117,6 +117,7 @@
         <h2>¿QUE DICEN MIS CLIENTES?</h2>
         <button id="modal" class="btn add">Agrega un comentario</button>
         <div class="form-testimonial">
+            <button id="closed">X</button>
             <h3>Déjame un comentario</h3>
             <div class="form-img">
                 <div class="form">
@@ -124,7 +125,15 @@
                     <input type="text" id="name" name="name" placeholder="Escribe tu nombre" required>
         
                     <label for="msj">Mensaje</label>
-                    <textarea rows="10" cols="70" name="msj" id="msj" placeholder="Escribe tu mensaje" required></textarea>
+                    <textarea rows="7" cols="70" name="msj" id="msj" placeholder="Escribe tu mensaje" required></textarea>
+
+                    <div class="rating">
+                        <input type="radio" name="star" value="5" id="star5"><label for="star5">★</label>
+                        <input type="radio" name="star" value="4" id="star4"><label for="star4">★</label>
+                        <input type="radio" name="star" value="3" id="star3"><label for="star3">★</label>
+                        <input type="radio" name="star" value="2" id="star2"><label for="star2">★</label>
+                        <input type="radio" name="star" value="1" id="star1"><label for="star1">★</label>
+                    </div>
                     
                     <button type="submit" id="send">Enviar</button>
                 </div>
@@ -148,7 +157,7 @@
                     </div>
                     <p></p>
                     <div class="ratings">
-                        
+                    <div class="stars"></div>
                     </div>
                 </main>
             </div>
