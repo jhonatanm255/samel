@@ -1,8 +1,9 @@
 /* CSS MODULES */
 @import "header.css";
-@import "abaut-me.css";
+@import "abaut_me.css";
 @import "galeria.css";
 @import "testimonials.css";
+@import "panel_admin.css";
 
 /* RESTORED GENERAL STYLES */
 *{

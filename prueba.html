@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+        #loginForm {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div id="loginForm">
+        <h2>Admin Login</h2>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script>
+        // Configuración de Firebase
+        var firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_PROJECT_ID.appspot.com",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+        // Inicializa Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        // Array para almacenar la secuencia de teclas
+        let keysPressed = [];
+
+        // La secuencia correcta
+        const correctSequence = ['1', '2', '3'];
+
+        // Escuchar los eventos de teclado
+        document.addEventListener('keydown', function(event) {
+            keysPressed.push(event.key);
+
+            // Comprobar si la secuencia actual coincide con la secuencia correcta
+            if (keysPressed.join('').includes(correctSequence.join(''))) {
+                document.getElementById('loginForm').style.display = 'block';
+                keysPressed = []; // Resetear la secuencia
+            }
+
+            // Limitar el tamaño del array a la longitud de la secuencia correcta
+            if (keysPressed.length > correctSequence.length) {
+                keysPressed.shift();
+            }
+        });
+
+        // Función de login con Firebase
+        function login() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            
+            firebase.auth().signInWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    // Redirigir al panel de administración
+                    window.location.href = "adminPanel.html";
+                })
+                .catch((error) => {
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    alert("Error: " + errorMessage);
+                });
+        }
+    </script>
+</body>
+</html>

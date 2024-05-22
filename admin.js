@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         nav: true
                     },
                     768: {
-                        items: 1,
+                        items: 3,
                         nav: true
                     },
                 }
@@ -175,4 +175,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Cargar testimonios al iniciar la página
     loadTestimonials();
 });
+
+
+
+
+// LOGICA PARA LA AUTENTICACION EN FIREBASE
 

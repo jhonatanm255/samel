@@ -8,7 +8,7 @@
     <!-- POPPINS CUSTOM FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
     <!-- CUSTOM FONT FOR BANNER NAME -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -165,14 +165,21 @@
         <!-- Owl Carousel Slider Ends -->
     </div>
 
+    <!-- FORMULARIO DEL PANEL ADMIN -->
+    <div class="content-form-admin">
+        <h3>Login Admin</h3>
+        <input id="name-form-admin" type="text" placeholder="Ingrese su Email">
+        <input type="password" name="password" id="password" placeholder="Ingrese su Contraseña">
+        <button onclick="login()" type="submit" id="btn-send-admin">Entrar</button>
+    </div>
+
     <!-- Firebase App -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script>
         // Your web app's Firebase configuration
-       
-            const firebaseConfig = {
+        const firebaseConfig = {
             apiKey: "AIzaSyCzmZ1KpfaSBNjRhnbBkRk7spt_UDkdCHc",
             authDomain: "samel-website.firebaseapp.com",
             databaseURL: "https://samel-website-default-rtdb.firebaseio.com/",
@@ -186,6 +193,49 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         const database = firebase.database();
+        // Initialize Firebase Authentication
+        const auth = firebase.auth();
+
+          // Array para almacenar la secuencia de teclas
+  let keysPressed = [];
+
+// La secuencia correcta
+const correctSequence = ['1', '2', '3'];
+
+// Escuchar los eventos de teclado
+document.addEventListener('keydown', function(event) {
+    keysPressed.push(event.key);
+
+    // Comprobar si la secuencia actual coincide con la secuencia correcta
+    if (keysPressed.join('').includes(correctSequence.join(''))) {
+        document.querySelector('.content-form-admin').style.display = 'block';
+        keysPressed = []; // Resetear la secuencia
+    }
+
+    // Limitar el tamaño del array a la longitud de la secuencia correcta
+    if (keysPressed.length > correctSequence.length) {
+        keysPressed.shift();
+    }
+});
+
+// Función de login con Firebase
+function login() {
+    var email = document.getElementById('name-form-admin').value;
+    var password = document.getElementById('password').value;
+    
+    firebase.auth().signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+            // Redirigir al panel de administración
+            window.location.href = "administrable.html";
+        })
+        .catch((error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            alert("Error: " + errorMessage);
+        });
+}
+
+
     </script>
 
     <!--   *****   JQuery Link   *****   -->
@@ -193,8 +243,6 @@
     <!--   *****   Owl Carousel js Link  *****  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <!-- SCRIP MAIN -->
-    <script src="firebaseConfig.js"></script>
-    <script src="stars.js"></script>
-    <script src="main.js"></script>
+    <script src="main.js" type="module"></script>
 </body>
 </html>
