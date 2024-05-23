@@ -1,22 +1,3 @@
-// Función para la animación de los valores de la sección de experiencia
-document.addEventListener('DOMContentLoaded', () => {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Deja de observar una vez que se ha animado
-            }
-        });
-    }, {
-        threshold: 0.5 // Inicia la animación cuando el 50% del elemento sea visible
-    });
-
-    const items = document.querySelectorAll('.hidden');
-    items.forEach(item => {
-        observer.observe(item);
-    });
-});
-
 document.addEventListener('DOMContentLoaded', function() {
     const dbRef = firebase.database().ref('testimonials');
 
@@ -119,8 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="quote">
                                 <i class="fa fa-quote-left"></i>
                                 <h2>${childData.name}</h2>
-                                <button class="closed" data-id="${childSnapshot.key}">X</button> <!-- Añadir un atributo de datos para almacenar el ID del comentario -->
-                                </div>
+                            </div>
                             <p>${childData.message}</p>
                             <div class="ratings">
                                 <div class='stars'>${stars}</div>
@@ -131,20 +111,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 `;
                 testimonialsContainer.append(testimonialCard);
             });
-
-             // Agregar manejador de eventos al botón "closed"
-            $('.closed').on('click', function() {
-                const comentarioID = $(this).data('id'); // Obtener el ID del comentario
-                eliminarComentario(comentarioID); // Llamar a la función eliminarComentario con el ID del comentario
-             });
-
-             // Función para eliminar un comentario de Firebase
-            function eliminarComentario(comentarioID) {
-                 if (confirm('¿Estás seguro de que deseas eliminar este comentario?')) {
-                 dbRef.child(comentarioID).remove(); // Eliminar el comentario de la base de datos
-                 }
-    }
-
 
             // Inicializar el carrusel después de cargar los testimonios
             testimonialsContainer.owlCarousel({
@@ -178,6 +144,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-// LOGICA PARA LA AUTENTICACION EN FIREBASE
+   
 

@@ -1,21 +1,4 @@
-// Función para la animación de los valores de la sección de experiencia
-document.addEventListener('DOMContentLoaded', () => {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Deja de observar una vez que se ha animado
-            }
-        });
-    }, {
-        threshold: 0.5 // Inicia la animación cuando el 50% del elemento sea visible
-    });
 
-    const items = document.querySelectorAll('.hidden');
-    items.forEach(item => {
-        observer.observe(item);
-    });
-});
 
 document.addEventListener('DOMContentLoaded', function() {
     const dbRef = firebase.database().ref('testimonials');
@@ -29,17 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
             noComent.style.display = 'none';
         }
     });
-
-    // Función para agregar un testimonio
-    function addTestimonial(name, message, rating) {
-        const newTestimonialRef = dbRef.push();
-        newTestimonialRef.set({
-            name: name,
-            message: message,
-            rating: parseInt(rating),
-            timestamp: firebase.database.ServerValue.TIMESTAMP
-        });
-    }
 
     // Función para abrir la ventana modal del formulario de comentarios
     const btnModal = document.getElementById('modal');
@@ -69,32 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Manejar el envío del formulario
-    document.getElementById('send').addEventListener('click', function(e) {
-        e.preventDefault();
-        const name = document.getElementById('name').value.trim();
-        const message = document.getElementById('msj').value.trim();
-        const rating = document.getElementById('rating').value.trim();
-
-        console.log(`Name: ${name}, Message: ${message}, Rating: ${rating}`);
-
-        if (name && message && rating) {
-            addTestimonial(name, message, rating);
-            document.getElementById('name').value = '';
-            document.getElementById('msj').value = '';
-            document.getElementById('rating').value = '';
-            stars.forEach(star => star.classList.remove('selected'));
-            swal("Enviado", "", "success");
-            const modalWindow = document.querySelector('.form-testimonial');
-                modalWindow.style.display = 'none';
-        } else {
-            swal("Por favor, complete los campos", "", "error").then(() => {
-                const modalWindow = document.querySelector('.form-testimonial');
-                modalWindow.style.display = 'block';
-            });
-        }
-    });
-
     // Función para cargar testimonios y configurar el carrusel
     function loadTestimonials() {
         dbRef.on('value', (snapshot) => {
@@ -119,7 +65,8 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="quote">
                                 <i class="fa fa-quote-left"></i>
                                 <h2>${childData.name}</h2>
-                            </div>
+                                <button class="closed" data-id="${childSnapshot.key}">X</button>
+                                </div>
                             <p>${childData.message}</p>
                             <div class="ratings">
                                 <div class='stars'>${stars}</div>
@@ -130,6 +77,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 `;
                 testimonialsContainer.append(testimonialCard);
             });
+
+             // Agregar manejador de eventos al botón "closed"
+            $('.closed').on('click', function() {
+                const comentarioID = $(this).data('id'); // Obtener el ID del comentario
+                eliminarComentario(comentarioID); // Llamar a la función eliminarComentario con el ID del comentario
+             });
+
+             // Función para eliminar un comentario de Firebase
+            function eliminarComentario(comentarioID) {
+                 if (confirm('¿Estás seguro de que deseas eliminar este comentario?')) {
+                 dbRef.child(comentarioID).remove(); // Eliminar el comentario de la base de datos
+                 }
+            }
+
 
             // Inicializar el carrusel después de cargar los testimonios
             testimonialsContainer.owlCarousel({
@@ -160,10 +121,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Cargar testimonios al iniciar la página
     loadTestimonials();
 });
-
-
-
-
 
 
 

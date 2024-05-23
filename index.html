@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CUSTOM CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- POPPINS CUSTOM FONT -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
-    <!-- CUSTOM FONT FOR BANNER NAME -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=Pacifico&display=swap" rel="stylesheet">
-    <!-- GOOGLE ICON -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-     <!-- *******  Font Awesome Icons Link  ******* -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
-    <!-- *******  Owl Carousel Links  ******* -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
-    <!-- OWL CAROUSEL LIBRARY -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
-    <!-- SWEETALERT LIBRARY -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <title>Samel Castillo</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CUSTOM CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- POPPINS CUSTOM FONT -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+        <!-- CUSTOM FONT FOR BANNER NAME -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=Pacifico&display=swap" rel="stylesheet">
+        <!-- GOOGLE ICON -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <!-- *******  Font Awesome Icons Link  ******* -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+        <!-- *******  Owl Carousel Links  ******* -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+        <!-- OWL CAROUSEL LIBRARY -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+        <!-- SWEETALERT LIBRARY -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <title>Samel Castillo</title>
+    </head>
 <body>
     <!-- HEADER -->
     <header class="head">
@@ -167,82 +167,31 @@
 
     <!-- FORMULARIO DEL PANEL ADMIN -->
     <div class="content-form-admin">
-        <h3>Login Admin</h3>
+        <div class="head-login-admin">
+            <h3>Login Admin</h3> 
+            <div class="close">
+                <button id="btn-close-form-login">X</button>
+            </div>
+        </div>
         <input id="name-form-admin" type="text" placeholder="Ingrese su Email">
         <input type="password" name="password" id="password" placeholder="Ingrese su Contraseña">
-        <button onclick="login()" type="submit" id="btn-send-admin">Entrar</button>
+        <button class="btn-send-login" onclick="login()" type="submit" id="btn-send-admin">Entrar</button>
     </div>
 
     <!-- Firebase App -->
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script>
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyCzmZ1KpfaSBNjRhnbBkRk7spt_UDkdCHc",
-            authDomain: "samel-website.firebaseapp.com",
-            databaseURL: "https://samel-website-default-rtdb.firebaseio.com/",
-            projectId: "samel-website",
-            storageBucket: "samel-website.appspot.com",
-            messagingSenderId: "227424756635",
-            appId: "1:227424756635:web:710d5fa7a550000241f73e",
-            measurementId: "G-QT0PC3E2BG"
-        };
-
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        const database = firebase.database();
-        // Initialize Firebase Authentication
-        const auth = firebase.auth();
-
-          // Array para almacenar la secuencia de teclas
-  let keysPressed = [];
-
-// La secuencia correcta
-const correctSequence = ['1', '2', '3'];
-
-// Escuchar los eventos de teclado
-document.addEventListener('keydown', function(event) {
-    keysPressed.push(event.key);
-
-    // Comprobar si la secuencia actual coincide con la secuencia correcta
-    if (keysPressed.join('').includes(correctSequence.join(''))) {
-        document.querySelector('.content-form-admin').style.display = 'block';
-        keysPressed = []; // Resetear la secuencia
-    }
-
-    // Limitar el tamaño del array a la longitud de la secuencia correcta
-    if (keysPressed.length > correctSequence.length) {
-        keysPressed.shift();
-    }
-});
-
-// Función de login con Firebase
-function login() {
-    var email = document.getElementById('name-form-admin').value;
-    var password = document.getElementById('password').value;
-    
-    firebase.auth().signInWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            // Redirigir al panel de administración
-            window.location.href = "administrable.html";
-        })
-        .catch((error) => {
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            alert("Error: " + errorMessage);
-        });
-}
-
-
-    </script>
-
-    <!--   *****   JQuery Link   *****   -->
+    <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <!--   *****   Owl Carousel js Link  *****  -->
+    <!-- Owl Carousel -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <!-- SCRIP MAIN -->
-    <script src="main.js" type="module"></script>
-</body>
+    <!-- JS SCRIPTS -->
+    <script src="js/firebaseConfig.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/testimonials.js"></script>
+    <script src="js/login-firebase.js"></script>
+    <!-- <script src="js/admin.js"></script> -->
+    <script src="js/main.js"></script>
+    
 </html>
