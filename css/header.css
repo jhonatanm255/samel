@@ -5,8 +5,9 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 5px 100px;
+    padding: 5px 60px;
     background-color: rgba(0, 0, 0, .7);
+    z-index: 1000;
 }
 
 .logo img {
@@ -18,6 +19,7 @@
 .nav-items {
     display: flex;
     align-items: center;
+    margin-left: auto;
 }
 
 .nav-items ul {
@@ -75,6 +77,13 @@
 
 .agenda:hover {
     color: black;
+}
+
+.menu-hamburguesa i {
+    color: aliceblue;
+    font-size: 1.3rem;
+    margin: 75%;
+    display: none;
 }
 
 /* ESTILOS DEL VIDEO BACKGROUND */

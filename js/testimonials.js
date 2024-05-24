@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         items: 2,
                         nav: true
                     },
-                    1280: {
+                    1440: {
                         items: 3,
                         nav: true
                     },

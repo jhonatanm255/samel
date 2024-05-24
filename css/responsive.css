@@ -2,9 +2,32 @@
 
 @media screen and (max-width: 768px) {
 
+    body {
+        width: 100%;
+    }
 
     .nav-items {
-        display: none;
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        margin-top: 60px;
+    }
+
+    .nav-items.active {
+        display: flex;
+    }
+
+    .nav-items ul {
+        flex-direction: column;
+    }
+
+    .nav-items a {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .menu-hamburguesa i {
+        display: block;
     }
 
     .video-banner {
@@ -22,6 +45,24 @@
         z-index: 100;
     }
 
+    .abaut {
+        display: block;
+        width: 100%;
+    }
+
+    .img-size {
+        width: 100%;
+        height: 100%;
+    }
+
+    .servicios-content {
+        display: block;
+    }
+    
+    .desing-service {
+        margin-bottom: 60px;
+    }
+
     .slogan {
         font-family: "Dancing Script", cursive;
         color: aliceblue;
@@ -33,6 +74,7 @@
     }
 
     .info-experiencia {
+        width: 100%;
         display: grid;
         grid-template-columns: auto;
         gap: 30px;
@@ -45,35 +87,44 @@
 }
 
 
-@media screen and (max-width: 768px) {
-
-    body {
-        width: 100%;
-    }
-
-    .nav-items {
-        display: none;
-    }
+@media screen and (min-width: 769px) and (max-width: 900px) {
 
     .abaut {
         display: block;
         width: 100%;
     }
 
-    .img-size {
-        width: 100%;
-        height: 100%;
-    }
-
     .info-experiencia {
         width: 100%;
+        display: grid;
+        grid-template-columns: auto;
+        gap: 30px;
     }
 
     .servicios-content {
         display: block;
     }
-    
+
+    .tiempo, .tattos {
+        border-bottom: solid 1px var(--color-orange);
+        border-right: none;
+    }
+
     .desing-service {
         margin-bottom: 60px;
     }
+
+    .abaut {
+        position: relative;
+        width: 100%;
+        margin: 40px auto 30px;
+        display: flex;
+        background-color: var(--color-dark-primary);
+        border-radius: 5px;
+        box-shadow: var(--box-shadow);
+    }
+   
+
+   
+    
 }

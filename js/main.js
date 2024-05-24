@@ -1,6 +1,15 @@
 // /js/main.js
 
 document.addEventListener('DOMContentLoaded', function() {
+    const menuHamburguesa = document.getElementById('btn-menu-bar');
+    const navItems = document.querySelector('.nav-items');
+
+    menuHamburguesa.addEventListener('click', function() {
+        navItems.classList.toggle('active');
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
     // Inicializar los módulos
     initAnimation();
     initTestimonials();
@@ -22,4 +31,8 @@ btnCloseFormLogin.addEventListener('click', (e) => {
     formCerrar.style.display = 'none'; // Esto oculta el formulario de login
     document.body.style.display = 'block'; // Esto muestra el body
 });
+
+
+
+
 
