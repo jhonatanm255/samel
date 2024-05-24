@@ -149,8 +149,9 @@
     color: black;
     font-weight: 400;
     position: absolute;
-    top: -15px;
-    left: 27.5%;
+    top: -0px;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .desing-service p {
@@ -162,8 +163,9 @@
 
 .desing-service .logo {
     position: absolute;
-    left: 42.5%;
-    bottom: -30px;
+    bottom: -65px;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border: solid 2px var(--color-orange);
 }
 

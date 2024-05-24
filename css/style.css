@@ -4,6 +4,8 @@
 @import "galeria.css";
 @import "testimonials.css";
 @import "panel_admin.css";
+@import "responsive.css";
+
 
 /* RESTORED GENERAL STYLES */
 *{
@@ -15,6 +17,8 @@
 body{
     font-family: "Poppins", sans-serif;
     background-color: var(--color-dark-secondary);
+    max-width: 1280px;
+    margin: auto;
 }
 
 

@@ -1,0 +1,80 @@
+
+
+
+@media screen and (max-width: 600px) {
+
+
+    .nav-items {
+        display: none;
+    }
+
+    .video-banner {
+        position: relative;
+        height: 80vh;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .name {
+        font-family: "Dancing Script", cursive;;
+        font-weight: 800;
+        font-size: 5em;
+        color: aliceblue;
+        z-index: 100;
+    }
+
+    .slogan {
+        font-family: "Dancing Script", cursive;
+        color: aliceblue;
+        z-index: 100;
+        font-size: 1.5em;
+        font-weight: 100;
+        text-align: center;
+        color: var(--color-orange);
+    }
+
+    .info-experiencia {
+        display: grid;
+        grid-template-columns: auto;
+        gap: 30px;
+    }
+
+    .tiempo, .tattos {
+        border-bottom: solid 1px var(--color-orange);
+        border-right: none;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+
+    body {
+        width: 100%;
+    }
+
+    .nav-items {
+        display: none;
+    }
+
+    .abaut {
+        display: block;
+        width: 100%;
+    }
+
+    .img-size {
+        width: 100%;
+        height: 100%;
+    }
+
+    .info-experiencia {
+        width: 100%;
+    }
+
+    .servicios-content {
+        display: block;
+    }
+    
+    .desing-service {
+        margin-bottom: 60px;
+    }
+}
