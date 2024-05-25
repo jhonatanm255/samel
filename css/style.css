@@ -5,6 +5,7 @@
 @import "testimonials.css";
 @import "panel_admin.css";
 @import "responsive.css";
+@import "footer.css";
 
 
 /* RESTORED GENERAL STYLES */
@@ -18,6 +19,7 @@ body{
     font-family: "Poppins", sans-serif;
     background-color: var(--color-dark-secondary);
     margin: auto;
+    
 }
 
 
@@ -62,9 +64,6 @@ body{
 	transition: all .2s;
 	font-weight: 500;
 }
-
-
-
 
 
   
