@@ -13,6 +13,15 @@
         margin-top: 60px;
     }
 
+    .item {
+        margin-left: -22px;
+    }
+
+    .agenda {
+        margin: auto;
+        margin-left: -22px;
+    }
+
     .nav-items.active {
         display: flex;
     }
