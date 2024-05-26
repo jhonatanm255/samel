@@ -1,5 +1,4 @@
 
-
 document.addEventListener('DOMContentLoaded', function() {
     const dbRef = firebase.database().ref('testimonials');
 
@@ -12,15 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
             noComent.style.display = 'none';
         }
     });
-
-    // Función para abrir la ventana modal del formulario de comentarios
-    const btnModal = document.getElementById('modal');
-    if (btnModal) {
-        btnModal.addEventListener('click', () => {
-            const modalWindow = document.querySelector('.form-testimonial');
-            modalWindow.style.display = 'block';
-        });
-    }
 
     const btnClosed = document.getElementById('closed');
     btnClosed.addEventListener('click', () => {
@@ -110,6 +100,14 @@ document.addEventListener('DOMContentLoaded', function() {
                         nav: true
                     },
                     768: {
+                        items: 2,
+                        nav: true
+                    },
+                    1024: {
+                        items: 2,
+                        nav: true
+                    },
+                    1440: {
                         items: 3,
                         nav: true
                     },
@@ -121,5 +119,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // Cargar testimonios al iniciar la página
     loadTestimonials();
 });
-
 

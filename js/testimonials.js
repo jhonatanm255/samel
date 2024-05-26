@@ -38,17 +38,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Manejar la selección de estrellas
-    const stars = document.querySelectorAll('.rating .fa-star');
-    stars.forEach(star => {
-        star.addEventListener('click', function() {
-            const value = this.getAttribute('data-value');
-            document.getElementById('rating').value = value; // Actualiza el campo oculto
-            stars.forEach(s => s.classList.remove('selected'));
-            for (let i = 0; i < value; i++) {
-                stars[i].classList.add('selected');
-            }
-        });
+const stars = document.querySelectorAll('.rating .fa-star');
+stars.forEach(star => {
+    star.addEventListener('click', function() {
+        const value = this.getAttribute('data-value');
+        document.getElementById('rating').value = value; // Actualiza el campo oculto
+        stars.forEach(s => s.classList.remove('selected'));
+        for (let i = 0; i < value; i++) {
+            stars[i].classList.add('selected');
+        }
     });
+});
 
     // Manejar el envío del formulario
     document.getElementById('send').addEventListener('click', function(e) {
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="quote">
                                 <i class="fa fa-quote-left"></i>
                                 <h2>${childData.name}</h2>
-                            </div>
+                                </div>
                             <p>${childData.message}</p>
                             <div class="ratings">
                                 <div class='stars'>${stars}</div>
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         nav: true
                     },
                     1024: {
-                        items: 2,
+                        items: 3,
                         nav: true
                     },
                     1440: {
@@ -149,8 +149,3 @@ document.addEventListener('DOMContentLoaded', function() {
     // Cargar testimonios al iniciar la página
     loadTestimonials();
 });
-
-
-
-   
-
