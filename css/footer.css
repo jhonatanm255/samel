@@ -49,6 +49,7 @@
     font-size: 1.4em;
     color: #fff;
     margin-right: 10px;
+    margin-bottom: 10px;
     background-color: #0d2033;
     text-align: center;
     transition: all 300ms ease;
@@ -75,7 +76,7 @@
   align-items: center;
   justify-content: center;
   gap: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 .contacto p {
@@ -98,7 +99,7 @@
   color: #34B7F1;
 }
 
-@media screen and (max-width:900px) {
+@media screen and (max-width:800px) {
 
     .pie-pagina .grupo-1{
         width: 100%;

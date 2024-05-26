@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         nav: true
                     },
                     1024: {
-                        items: 2,
+                        items: 3,
                         nav: true
                     },
                     1440: {
