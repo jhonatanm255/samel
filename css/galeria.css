@@ -1,7 +1,7 @@
 
 
 .container-carousel {
-    margin: 30px auto;
+    margin: 10px auto 35px;
     position: relative;
     width: 100%;
     max-width: 1150px;
@@ -62,3 +62,27 @@
 .btn-right {
     right: 10px;
 } 
+
+/* GALERY 2 */
+
+.galery{
+  display: flex;
+  margin: auto;
+  width: 80%;
+  height: 500px;
+  margin-bottom: 35px;
+}
+.galery img{
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: .6;
+  transition: .5s ease;
+  border-radius: 5px;
+}
+.galery img:hover{
+  cursor: crosshair;
+  width: 300px;
+  opacity: 1;
+  filter: contrast(120%);
+}

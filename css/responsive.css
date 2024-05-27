@@ -93,6 +93,10 @@
         border-bottom: solid 1px var(--color-orange);
         border-right: none;
     }
+
+    .galery {
+        width: 100%;
+    }
 }
 
 
@@ -148,6 +152,10 @@
         border-radius: 5px;
         box-shadow: var(--box-shadow);
     }  
+
+    .galery {
+        width: 100%;
+    }
 }
 
 @media screen and (min-width: 901px) and (max-width: 1024px) {
@@ -165,5 +173,9 @@
         height: 100vh;
         width: 100%;
         overflow: hidden;
+    }
+
+    .galery {
+        width: 100%;
     }
 }

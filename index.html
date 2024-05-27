@@ -39,7 +39,7 @@
                     <a class="item" href="#">Sobre Mi</a>
                     <a class="item" href="#">Galeria</a>
                     <a class="item" href="#">Artes</a>
-                    <a class="item" href="#">Contacto</a>
+                    <a class="item" href="#contact">Contacto</a>
                     <a class="item agenda" href="#">Agenda</a>
                 </ul>
             </div>
@@ -155,6 +155,21 @@
         </div>
     </div>
 
+    <div class="sub-title">
+        <h2>ARTES</h2>
+   </div>
+    <div class="galery">
+        <img src="media/img/1.jpg" alt="img-galery">
+        <img src="media/img/2.jpg" alt="img-galery">
+        <img src="media/img/3.jpg" alt="img-galery">
+        <img src="media/img/4.jpg" alt="img-galery">
+        <img src="media/img/5.jpg" alt="img-galery">
+        <img src="media/img/7.jpg" alt="img-galery">
+        <img src="media/img/8.jpg" alt="img-galery">
+        <img src="media/img/9.jpg" alt="img-galery">
+        <img src="media/img/10.jpg" alt="img-galery">
+    </div>
+
     <!-- WHAT MY CLIENTS SAY -->
     <div class="sub-title relative">
         <h2>¿QUE DICEN MIS CLIENTES?</h2>
@@ -165,11 +180,11 @@
             <div class="form-img">
                 <div class="form">
                     <label for="name">Nombre</label>
-                    <input type="text" id="name" name="name" placeholder="Escribe tu nombre" required>
+                    <input type="text" id="name" name="name" maxlength="30" placeholder="Escribe tu nombre" required>
         
                     <label for="msj">Mensaje</label>
-                    <textarea rows="7" cols="70" name="msj" id="msj" placeholder="Escribe tu mensaje" required></textarea>
-        
+                    <textarea rows="7" cols="70" name="msj" maxlength="200" id="msj" placeholder="Escribe tu mensaje" required></textarea>
+
                     <div class="rating">
                         <i class="fa fa-star" data-value="1"></i>
                         <i class="fa fa-star" data-value="2"></i>
@@ -222,7 +237,7 @@
     </div>
 
     <!-- FOOTER SECTIONS -->
-    <footer class="pie-pagina">
+    <footer id="contact" class="pie-pagina">
         <div class="grupo-1">
             <div class="box">
                 <!-- TAG GOOGLE MAPS -->
@@ -248,8 +263,8 @@
                     <div class="red-social">
                         <a href="#" class="fa fa-facebook"></a>
                         <a href="#" class="fa fa-instagram"></a>
-                        <a href="#" class="fa fa-twitter"></a>
-                        <a href="#" class="fa fa-youtube"></a>
+                        <a href="#" class="fa-brands fa-tiktok"></a>
+                        <a href="#" class="fa-brands fa-pinterest-p"></a>
                     </div>
                 </div>
             </div>
@@ -275,11 +290,4 @@
     <!-- <script src="js/admin.js"></script> -->
     <script src="js/main.js"></script>
 </html>
-
-
-
-
-
-
-
 

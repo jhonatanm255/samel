@@ -83,16 +83,21 @@ stars.forEach(star => {
             testimonialsContainer.owlCarousel('destroy'); // Destruir el carrusel existente
             testimonialsContainer.html(''); // Limpiar contenido previo
 
-            snapshot.forEach((childSnapshot) => {
+           snapshot.forEach((childSnapshot) => {
                 const childData = childSnapshot.val();
                 const date = new Date(childData.timestamp).toLocaleString();
                 const rating = childData.rating;
 
-                // Crear estrellas según la calificación
-                let stars = '';
-                for (let i = 1; i <= 5; i++) {
-                    stars += `<i class="fa${i <= rating ? ' fas' : ' far'} fa-star"></i>`;
+                let stars = '<div class="stars">';
+                    for (let i = 1; i <= 5; i++) {
+                        if (i <= rating) {
+                             stars += '<i class="fas fa-star"></i>';
+                    } else {
+                            stars += '<i class="far fa-star"></i>';
+                        }
                 }
+                    stars += '</div>';
+
 
                 const testimonialCard = `
                     <div class="testimonial-card">
@@ -100,7 +105,7 @@ stars.forEach(star => {
                             <div class="quote">
                                 <i class="fa fa-quote-left"></i>
                                 <h2>${childData.name}</h2>
-                                </div>
+                            </div>
                             <p>${childData.message}</p>
                             <div class="ratings">
                                 <div class='stars'>${stars}</div>
@@ -134,7 +139,7 @@ stars.forEach(star => {
                         nav: true
                     },
                     1024: {
-                        items: 3,
+                        items: 2,
                         nav: true
                     },
                     1440: {
@@ -149,3 +154,6 @@ stars.forEach(star => {
     // Cargar testimonios al iniciar la página
     loadTestimonials();
 });
+
+
+
