@@ -53,11 +53,13 @@
     background-color: #0d2033;
     text-align: center;
     transition: all 300ms ease;
+    border: solid 1px transparent;
     border-radius: 3px;
 }
 
 .pie-pagina .grupo-1 .red-social a:hover {
     color: var(--color-orange); 
+    border: solid 1px var(--color-orange);
 }
 
 .pie-pagina .grupo-2 {
