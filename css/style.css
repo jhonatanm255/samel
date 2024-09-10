@@ -6,6 +6,7 @@
 @import "panel_admin.css";
 @import "responsive.css";
 @import "footer.css";
+@import "dark_mode.css";
 
 
 /* RESTORED GENERAL STYLES */
@@ -23,7 +24,6 @@ body{
     font-family: "Poppins", sans-serif;
     background-color: var(--color-dark-secondary);
     margin: auto;
-    
 }
 
 

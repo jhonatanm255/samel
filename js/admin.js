@@ -81,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
                  }
             }
 
-
             // Inicializar el carrusel después de cargar los testimonios
             testimonialsContainer.owlCarousel({
                 loop: true,
